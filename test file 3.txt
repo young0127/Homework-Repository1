@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void m(int a) {
+    int *m,*b;
+    m = malloc(sizeof(int)*6);
+    b = malloc(sizeof(int)*6);
+
+    m[0]=50000;
+    m[1]=10000;
+    m[2]=5000;
+    m[3]=1000;
+    m[4]=500;
+    m[5]=100;
+
+    b[0] = a/m[0];
+    a -= m[0]*b[0];
+    b[1] = a/m[1];
+    a -= m[1]*b[1];
+    b[2] = a/m[2];
+    a -= m[2]*b[2];
+    b[3] = a/m[3];
+    a -= m[3]*b[3];
+    b[4] = a/m[4];
+    a -= m[4]*b[4];
+    b[5] = a/m[5];
+
+    printf("50,000-won bill : %d\n", b[0]);
+    printf("10,000-won bill : %d\n", b[1]);
+    printf("5,000-won bill : %d\n", b[2]);
+    printf("1,000-won bill : %d\n", b[3]);
+    printf("500-won coin : %d\n", b[4]);
+    printf("100-won coin : %d\n", b[5]);
+
+    free(m);
+    free(b);
+}
+int main(void) {
+    int a;
+    printf(">>");
+    scanf("%d", &a); getchar();
+    m(a);
+    return 0;
+}

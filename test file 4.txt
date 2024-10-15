@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    cout << "Please, enter your favorite number: ";
+    cin >> i;
+
+    cout << "The number entered is " << i << endl;
+
+    return 0;
+}
